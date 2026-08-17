@@ -25,9 +25,20 @@ video {
 
 <body>
 
-<video autoplay muted loop playsinline>
+<video id="video" autoplay muted loop playsinline>
     <source src="ok.webm" type="video/webm">
 </video>
+
+<script>
+const video = document.getElementById("video");
+
+video.playbackRate = 6;
+video.defaultPlaybackRate = 6;
+
+video.addEventListener("loadedmetadata", () => {
+    video.playbackRate = 6;
+});
+</script>
 
 </body>
 </html>
